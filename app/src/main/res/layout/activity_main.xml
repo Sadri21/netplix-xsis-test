@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".view.MainActivity">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:id="@+id/title_toolbar"
+        android:layout_marginHorizontal="24dp">
+
+        <TextView
+            android:id="@+id/title_dashboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Netplix"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btn_sarch"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/outline_search_black_48"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            app:tint="@color/white" />
+
+    </RelativeLayout>
+
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/title_toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="16dp"
+            android:layout_height="match_parent">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:animateLayoutChanges="true" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/into_tab_layout"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:background="@color/background"
+                app:tabBackground="@drawable/tab_pager_selector"
+                app:tabGravity="center"
+                app:tabIndicatorHeight="0dp"
+                android:layout_below="@id/pager"
+                android:layout_centerHorizontal="true"
+                app:tabPaddingStart="8dp"
+                app:tabPaddingEnd="8dp" />
+
+            <TextView
+                android:id="@+id/lbl_latest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/into_tab_layout"
+                android:text="Latest"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:textSize="18sp"
+                android:textColor="@color/white"/>
+
+            <FrameLayout
+                android:id="@+id/layout_latest"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="16dp"
+                android:layout_below="@id/lbl_latest">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_latest"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="16dp"
+                    android:clipToPadding="false"/>
+
+                <ProgressBar
+                    android:id="@+id/progress_latest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="false"
+                    android:visibility="gone"
+                    android:layout_gravity="center"/>
+
+            </FrameLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_genre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_below="@id/layout_latest"/>
+
+        </RelativeLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+
+</RelativeLayout>

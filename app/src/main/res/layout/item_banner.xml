@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/img_banner"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="false"
+        app:riv_corner_radius="10dp"
+        android:layout_marginHorizontal="16dp"
+        android:scaleType="centerCrop"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="16dp"
+        android:background="@drawable/background_banner"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/center_guideline"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="-16dp"
+            android:layout_centerInParent="true"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/center_guideline"
+            android:layout_marginEnd="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_movie_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:textColor="@color/white"
+                android:text="Title"
+                android:alpha="0.8"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/tv_movie_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:textColor="@color/white"
+                android:text="Title"
+                android:alpha="0.8"
+                android:layout_marginTop="8dp"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

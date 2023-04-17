@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:layout_marginHorizontal="4dp"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/tv_video_image"
+            android:layout_width="160dp"
+            android:layout_height="100dp"
+            android:src="@drawable/movie_placeholder"
+            android:scaleType="centerCrop"
+            app:riv_corner_radius="10dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/round_play_arrow_black_36"
+            app:tint="@color/grey_cloud"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_video_title"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:text="Ini video trailer saya daw daw dawfaw"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:layout_marginTop="4dp"/>
+
+</LinearLayout>
